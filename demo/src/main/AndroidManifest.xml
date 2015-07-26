@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.idealdevelopers.dzirecybercafe" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/dzire_logo"
+        android:label="@string/app_name"
+        android:theme="@style/myTheme" >
+        <activity
+            android:name="com.idealdevelopers.dzirecybercafe.ui.activity.MainActivity"
+            android:theme="@style/nLiveoDrawer"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.idealdevelopers.dzirecybercafe.ui.activity.SettingsActivity"
+            android:label="@string/settings">
+        </activity>
+
+    </application>
+
+</manifest>
