@@ -6,20 +6,24 @@
 
     <string name="sign_in">Sign in</string>
 
+    <string name="ranklabel">"Rank : "</string>
+    <string name="countrylabel">"Country : "</string>
+    <string name="populationlabel">"Population : "</string>
+
     <string name="inbox">Home</string>
-    <string name="starred">Latest News</string>
-    <string name="sent_mail">New ..</string>
-    <string name="drafts">Drafts</string>
-    <string name="categories">Categories</string>
-    <string name="trash">Trash</string>
-    <string name="spam">Spam</string>
-    <string name="settings">Developers Info.</string>
+    <string name="starred">Job Work</string>
+    <string name="sent_mail">w</string>
+    <string name="drafts">w</string>
+    <string name="categories">Designing</string>
+    <string name="trash">Developers Info.</string>
+    <string name="spam">About US</string>
+    <string name="settings">Latest Bharti</string>
 
     <string name="add">Add</string>
     <string name="search">Search</string>
 
     <string name="important">Important</string>
-    <string name="documents">Documents</string>
+    <string name="documents">Document</string>
 
     <!-- Toast -->
     <string name="open_user_profile">Open user profile</string>

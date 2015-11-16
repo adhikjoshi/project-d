@@ -1,18 +1,3 @@
-/*
- * Copyright 2015 Rudson Lima
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.idealdevelopers.dzirecybercafe.ui.activity;
 
 import android.content.Intent;
@@ -24,12 +9,15 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.idealdevelopers.dzirecybercafe.R;
+import com.idealdevelopers.dzirecybercafe.ui.fragment.HomeFragement;
+import com.idealdevelopers.dzirecybercafe.ui.fragment.JobworkFragement;
 import com.idealdevelopers.dzirecybercafe.ui.fragment.MainFragment;
-import com.idealdevelopers.dzirecybercafe.ui.fragment.ViewPagerFragment;
+import com.idealdevelopers.dzirecybercafe.ui.fragment.developers_infi;
 import com.idealdevs.dzirecybercafe.Model.HelpLiveo;
 import com.idealdevs.dzirecybercafe.interfaces.OnItemClickListener;
 import com.idealdevs.dzirecybercafe.interfaces.OnPrepareOptionsMenuLiveo;
 import com.idealdevs.dzirecybercafe.navigationliveo.NavigationLiveo;
+import com.parse.ParseAnalytics;
 
 public class MainActivity extends NavigationLiveo implements OnItemClickListener {
 
@@ -38,37 +26,38 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
     @Override
     public void onInt(Bundle savedInstanceState) {
 
+
+        //parse crash reposring
+        ParseAnalytics.trackAppOpenedInBackground(getIntent());
+
         // User Information
         this.userName.setText("");
-        this.userName.setText("Dzire Cyber Cafe");
+        this.userName.setText(R.string.app_name);
         this.userEmail.setText("dzirecybercafe@gmail.com");
         this.userPhoto.setImageResource(R.drawable.dzire_logo);
         this.userBackground.setImageResource(R.drawable.ic_user_background_first);
 
         // Creating items navigation
         mHelpLiveo = new HelpLiveo();
-        mHelpLiveo.add(getString(R.string.inbox), R.mipmap.ic_inbox_black_24dp, 7);
-        mHelpLiveo.addSubHeader(getString(R.string.categories)); //Item subHeader
-        mHelpLiveo.add(getString(R.string.starred), R.mipmap.ic_star_black_24dp);
-        mHelpLiveo.add(getString(R.string.sent_mail), R.mipmap.ic_send_black_24dp);
-        mHelpLiveo.add(getString(R.string.drafts), R.mipmap.ic_drafts_black_24dp);
-        mHelpLiveo.addSeparator(); // Item separator
+        mHelpLiveo.add(getString(R.string.inbox), R.mipmap.ic_inbox_black_24dp);
+        mHelpLiveo.add(getString(R.string.starred), R.mipmap.ic_add_white_24dp);
         mHelpLiveo.add(getString(R.string.trash), R.mipmap.ic_delete_black_24dp);
-        mHelpLiveo.add(getString(R.string.spam), R.mipmap.ic_report_black_24dp, 120);
+        mHelpLiveo.add(getString(R.string.categories), R.mipmap.ic_inbox_black_24dp);
+        mHelpLiveo.add(getString(R.string.spam), R.mipmap.ic_report_black_24dp);
 
-        with(this).startingPosition(2) //Starting position in the list
+        with(this).startingPosition(0) //Starting position in the list
                 .addAllHelpItem(mHelpLiveo.getHelp())
 
                 //{optional} - List Customization "If you remove these methods and the list will take his white standard color"
                 //.selectorCheck(R.drawable.selector_check) //Inform the background of the selected item color
-                //.colorItemDefault(R.color.nliveo_blue_colorPrimary) //Inform the standard color name, icon and counter
-                //.colorItemSelected(R.color.nliveo_purple_colorPrimary) //State the name of the color, icon and meter when it is selected
+              //  .colorItemDefault(R.color.nliveo_blue_colorPrimary) //Inform the standard color name, icon and counter
+                .colorItemSelected(R.color.nliveo_purple_colorPrimary) //State the name of the color, icon and meter when it is selected
                 //.backgroundList(R.color.nliveo_black_light) //Inform the list of background color
                 //.colorLineSeparator(R.color.nliveo_transparent) //Inform the color of the subheader line
 
                 //{optional} - SubHeader Customization
-                .colorItemSelected(R.color.nliveo_blue_colorPrimary)
-                .colorNameSubHeader(R.color.nliveo_blue_colorPrimary)
+              //  .colorItemSelected(R.color.nliveo_blue_colorPrimary)
+              //  .colorNameSubHeader(R.color.nliveo_blue_colorPrimary)
                 //.colorLineSeparator(R.color.nliveo_blue_colorPrimary)
 
                 .footerItem(R.string.settings, R.mipmap.ic_settings_black_24dp)
@@ -85,6 +74,7 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
 
         int position = this.getCurrentPosition();
         this.setElevationToolBar(position != 2 ? 15 : 0);
+
     }
 
     @Override
@@ -93,8 +83,17 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
         FragmentManager mFragmentManager = getSupportFragmentManager();
 
         switch (position){
+
+            case 0:
+                mFragment = new HomeFragement();
+                break;
+
+            case 1:
+                mFragment = new JobworkFragement();
+                break;
+
             case 2:
-                mFragment = new ViewPagerFragment();
+                mFragment = new developers_infi();
                 break;
 
             default:
@@ -126,7 +125,7 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
     private View.OnClickListener onClickFooter = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+            startActivity(new Intent(getApplicationContext(), com.idealdevelopers.dzirecybercafe.ui.Parse.MainActivity.class));
             closeDrawer();
         }
     };

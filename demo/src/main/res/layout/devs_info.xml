@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <ImageButton
+        android:layout_width="264dp"
+        android:layout_height="197dp"
+        android:id="@+id/imageButton"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/ideal" />
+
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="v1.0.0 Stable"
+            android:textColor="@color/nliveo_black"
+            android:id="@+id/textView6"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="55dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="www.idealdevs.com"
+        android:textColor="@color/nliveo_black"
+        android:id="@+id/textView7"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/textView5"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Copyright © 2014–2015 Ideal Developers"
+            android:id="@+id/textView8"
+            android:textColor="@color/nliveo_black"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="false"
+            android:gravity="center_horizontal"
+        android:layout_gravity="bottom"
+        android:layout_weight="0.64" />
+
+</LinearLayout>
+

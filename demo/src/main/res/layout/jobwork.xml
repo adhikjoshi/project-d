@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:drawable/screen_background_dark_transparent"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="What We Do"
+        android:textColor="#ffffffff"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/button4"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/button2"
+        android:layout_toEndOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/button_selector"
+        android:text="English"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/button2"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_selector"
+        android:text="Gujarati"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/button4wq"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:background="@drawable/button_selector"
+        android:text="Sunscrit"
+        android:textColor="@android:color/white"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/button4"
+        android:layout_alignEnd="@+id/button4"
+        android:layout_marginRight="51dp"
+        android:layout_marginEnd="51dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:background="@drawable/button_selector"
+        android:text="Hindi"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/button4wq"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="4 Language Job Work"
+        android:textColor="#9a9a9a"
+        android:textSize="20sp"
+        android:layout_below="@+id/button4wq"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp" />
+</RelativeLayout>
